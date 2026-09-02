@@ -81,6 +81,7 @@ export default function Nav() {
           <img
             src="/summit_logo_white.png"
             alt="Summit Performance & Transformation Consult"
+            className="nav-logo"
             style={{ height: 48, width: 'auto', display: 'block' }}
           />
         </button>

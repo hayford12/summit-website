@@ -56,6 +56,12 @@ img { display: block; max-width: 100%; }
 
 /* ── MOBILE HAMBURGER ── */
 @media (max-width: 768px) {
+  :root {
+    --nav-h: 60px;
+  }
+  .nav-logo {
+    height: 34px !important;
+  }
   .mobile-hamburger {
     display: flex !important;
     align-items: center;
