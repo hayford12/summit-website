@@ -45,7 +45,7 @@ export default function Footer() {
               alt="Summit Performance & Transformation Consult"
               style={{ height: 64, width: 'auto', marginBottom: 20 }}
             />
-            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', lineHeight: 1.9 }}>
+            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.9 }}>
               <div>No. 12 Sowah Close, Ambassadorial Enclave</div>
               <div>East Legon, Accra, Ghana</div>
               <div>Digital Address: GA-332-4333</div>
@@ -90,16 +90,16 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
-          <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.28)' }}>
+          <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)' }}>
             © {new Date().getFullYear()} Summit Performance and Transformation Consult Limited. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: 20 }}>
             {[['Privacy Policy', '/legal/privacy'], ['Terms of Engagement', '/legal/terms'], ['Accessibility', '/legal/accessibility']].map(([l, p]) => (
               <button
                 key={p} onClick={() => go(p)}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 12, color: 'rgba(255,255,255,0.28)', fontFamily: 'inherit', transition: 'color 0.15s' }}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 12, color: 'rgba(255,255,255,0.55)', fontFamily: 'inherit', transition: 'color 0.15s' }}
                 onMouseEnter={e => e.currentTarget.style.color = '#fff'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.28)'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.55)'}
               >
                 {l}
               </button>

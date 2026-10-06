@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { T } from '../styles/tokens'
+import SEO from '../components/SEO'
 import NotFoundPage from './NotFoundPage'
 
 const LEGAL_CONTENT = {
@@ -50,6 +51,11 @@ export default function LegalPage() {
 
   return (
     <main style={{ paddingTop: 72 }}>
+      <SEO
+        title={content.title}
+        description={content.subtitle}
+        canonical={`/legal/${type}`}
+      />
       <section style={{ background: T.navy, padding: '80px 0 64px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
           <h1 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, fontSize: 'var(--h1)', color: '#fff', lineHeight: 1.08, marginBottom: 16 }}>{content.title}</h1>

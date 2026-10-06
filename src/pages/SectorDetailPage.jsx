@@ -45,7 +45,7 @@ export default function SectorDetailPage() {
 
       <section style={{ background: '#fff', padding: '64px 0' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64 }}>
+          <div className='grid-2col' style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64 }}>
             <div>
               <SectionLabel>Priority Challenges</SectionLabel>
               {s.challenges.map(c => (
@@ -71,7 +71,7 @@ export default function SectorDetailPage() {
       <section style={{ background: T.warm, padding: '64px 0' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
           <SectionLabel>Relevant Services</SectionLabel>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 2 }}>
+          <div className='grid-3col' style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 2 }}>
             {SERVICES.slice(0, 3).map(sv => (
               <button
                 key={sv.slug}

@@ -72,7 +72,7 @@ export default function ServiceDetailPage() {
       {/* Outcomes + Diagnostic focus */}
       <section style={{ background: T.navy, padding: '64px 0' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64 }}>
+          <div className='grid-2col' style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64 }}>
             <div>
               <div style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.15em', textTransform: 'uppercase', color: T.gold, marginBottom: 16 }}>Intended Outcomes</div>
               {s.outcomes.map(o => (
@@ -105,7 +105,7 @@ export default function ServiceDetailPage() {
       <section style={{ background: T.warm, padding: '64px 0' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
           <SectionLabel>Related Services</SectionLabel>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 2 }}>
+          <div className='grid-3col' style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 2 }}>
             {related.map(r => (
               <button
                 key={r.slug}

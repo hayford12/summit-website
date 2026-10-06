@@ -104,16 +104,6 @@ img { display: block; max-width: 100%; }
     grid-template-columns: 1fr !important;
   }
 
-  /* Section padding */
-  .section-pad {
-    padding: 64px 0 !important;
-  }
-
-  /* Container padding */
-  .container {
-    padding: 0 20px !important;
-  }
-
   /* Hero */
   .hero-section {
     min-height: 100svh !important;
@@ -147,9 +137,6 @@ img { display: block; max-width: 100%; }
   .services-grid {
     grid-template-columns: 1fr !important;
     gap: 2px !important;
-  }
-  .service-card {
-    height: 220px !important;
   }
 
   /* 4D section — stack tabs above panel */
@@ -186,20 +173,10 @@ img { display: block; max-width: 100%; }
     gap: 40px !important;
   }
 
-  /* Form — single column for all field pairs */
-  .form-row {
-    grid-template-columns: 1fr !important;
-  }
-
   /* Footer grid */
   .footer-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 32px !important;
-  }
-
-  /* CTA banner */
-  .cta-heading {
-    font-size: clamp(1.5rem, 6vw, 2rem) !important;
   }
 
   /* Buttons */

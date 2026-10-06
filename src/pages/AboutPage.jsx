@@ -32,7 +32,7 @@ export default function AboutPage() {
       {/* Who We Are + Execution Gap */}
       <section style={{ background: '#fff', padding: '80px 0' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80 }}>
+          <div className='grid-2col' style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80 }}>
             <div>
               <SectionLabel>Who We Are</SectionLabel>
               <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, fontSize: 'var(--h2)', color: T.navy, marginBottom: 8 }}>Our Story</h2>
@@ -60,7 +60,7 @@ export default function AboutPage() {
       {/* Vision & Mission */}
       <section style={{ background: T.navy, padding: '80px 0' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64 }}>
+          <div className='grid-2col' style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64 }}>
             {[
               ['Vision', "To be Ghana's most trusted partner for strategy execution and organisational transformation — the firm that turns ambition into measurable results."],
               ['Mission', 'To close the gap between strategic intent and operational performance for Ghanaian institutions through rigorous diagnosis, disciplined implementation, and embedded capability transfer.'],
@@ -80,7 +80,7 @@ export default function AboutPage() {
           <SectionLabel>What We Stand For</SectionLabel>
           <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, fontSize: 'var(--h2)', color: T.navy, marginBottom: 8 }}>Six Core Values</h2>
           <GoldRule />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 2 }}>
+          <div className='values-grid grid-3col' style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 2 }}>
             {CORE_VALUES.map((v, i) => {
               const colors = [T.navy, T.teal, T.gold, T.teal, T.navy, T.gold]
               return (

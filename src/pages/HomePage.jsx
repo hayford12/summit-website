@@ -51,11 +51,6 @@ const STATS = [
   { num:'5',   label:'Sectors served' },
 ]
 
-const SERVICE_IMAGES = [
-  IMG.services.strategy, IMG.services.digital, IMG.services.operations,
-  IMG.services.cx, IMG.services.leadership, IMG.services.risk,
-]
-
 const INSIGHT_COLORS = [T.teal, T.navy, T.gold]
 
 export default function HomePage() {
@@ -178,7 +173,7 @@ export default function HomePage() {
             <GoldRule />
           </Reveal>
           <div className='services-grid' style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:3 }}>
-            {SERVICES.map((s, i) => <ServiceImageCard key={s.slug} s={s} i={i} img={SERVICE_IMAGES[i]} onNav={() => go(`/services/${s.slug}`)} />)}
+            {SERVICES.map((s, i) => <ServiceImageCard key={s.slug} s={s} i={i} img={IMG.services[s.slug] || IMG.serviceFallback} onNav={() => go(`/services/${s.slug}`)} />)}
           </div>
         </div>
       </section>
@@ -273,7 +268,7 @@ export default function HomePage() {
             </div>
           </Reveal>
           <div className='insights-grid' style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:24 }}>
-            {INSIGHTS.map((ins, i) => <InsightCard key={ins.slug} ins={ins} i={i} img={IMG.insights[i]} color={INSIGHT_COLORS[i]} onNav={() => go(`/insights/${ins.slug}`)} />)}
+            {INSIGHTS.map((ins, i) => <InsightCard key={ins.slug} ins={ins} i={i} img={IMG.insights[ins.slug] || IMG.insightFallback} color={INSIGHT_COLORS[i % INSIGHT_COLORS.length]} onNav={() => go(`/insights/${ins.slug}`)} />)}
           </div>
         </div>
       </section>

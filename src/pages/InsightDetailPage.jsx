@@ -24,7 +24,7 @@ export default function InsightDetailPage() {
       />
       <section style={{ position: 'relative', padding: '80px 0 64px', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
-          <img src={IMG.insights[INSIGHTS.indexOf(ins) % IMG.insights.length]} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+          <img src={IMG.insights[ins.slug] || IMG.insightFallback} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(16,42,67,0.88)' }} />
         </div>
         <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 32px' }}>
@@ -55,7 +55,7 @@ export default function InsightDetailPage() {
           <div style={{ marginTop: 48, paddingTop: 32, borderTop: `1px solid ${T.lightGray}` }}>
             <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
               <div style={{ width: 48, height: 48, borderRadius: '50%', overflow: 'hidden', border: `2px solid ${T.gold}` }}>
-                  <img src={IMG.leaders[0]} alt={ins.author} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+                  <img src={IMG.authorPhotos[ins.author] || IMG.authorFallback} alt={ins.author} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
                 </div>
               <div>
                 <div style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, color: T.navy, fontSize: 14 }}>{ins.author}</div>

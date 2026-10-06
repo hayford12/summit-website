@@ -60,17 +60,19 @@ export default function InsightsPage() {
             ))}
           </div>
 
-          {/* Featured insight */}
-          <div style={{ background: T.warm, padding: '40px', borderLeft: `4px solid ${T.teal}`, marginBottom: 48 }}>
-            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: T.teal, fontFamily: 'Manrope, sans-serif', marginBottom: 8 }}>Featured</div>
-            <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, fontSize: 24, color: T.navy, marginBottom: 12, lineHeight: 1.3 }}>
-              {INSIGHTS[0].title}
-            </h2>
-            <p style={{ fontSize: 15, color: '#4A6073', lineHeight: 1.7, maxWidth: 640, marginBottom: 20 }}>{INSIGHTS[0].summary}</p>
-            <BtnOutline onClick={() => go(`/insights/${INSIGHTS[0].slug}`)} style={{ fontSize: 13, padding: '10px 20px' }}>
-              Read Insight
-            </BtnOutline>
-          </div>
+          {/* Featured insight — always the first item of the active filter, so it never shows a piece outside the selected category */}
+          {filtered.length > 0 && (
+            <div style={{ background: T.warm, padding: '40px', borderLeft: `4px solid ${T.teal}`, marginBottom: 48 }}>
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: T.teal, fontFamily: 'Manrope, sans-serif', marginBottom: 8 }}>Featured</div>
+              <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, fontSize: 24, color: T.navy, marginBottom: 12, lineHeight: 1.3 }}>
+                {filtered[0].title}
+              </h2>
+              <p style={{ fontSize: 15, color: '#4A6073', lineHeight: 1.7, maxWidth: 640, marginBottom: 20 }}>{filtered[0].summary}</p>
+              <BtnOutline onClick={() => go(`/insights/${filtered[0].slug}`)} style={{ fontSize: 13, padding: '10px 20px' }}>
+                Read Insight
+              </BtnOutline>
+            </div>
+          )}
 
           {/* Cards grid */}
           <div className='insights-grid' style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
@@ -85,7 +87,7 @@ export default function InsightsPage() {
               >
                 {/* Thumbnail */}
                 <div style={{ height: 180, overflow: 'hidden', position: 'relative' }}>
-                  <img src={IMG.insights[i % IMG.insights.length]} alt={ins.title}
+                  <img src={IMG.insights[ins.slug] || IMG.insightFallback} alt={ins.title}
                     style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
                     onMouseEnter={e => e.target.style.transform = 'scale(1.05)'}
                     onMouseLeave={e => e.target.style.transform = 'scale(1)'} />

@@ -37,7 +37,7 @@ export default function ApproachPage() {
                 <div style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, fontSize: 40, color: T.navy, lineHeight: 1, marginBottom: 16 }}>{d.name}</div>
                 <div style={{ fontSize: 12, fontWeight: 700, color: d.color, fontFamily: 'Manrope, sans-serif', letterSpacing: '0.06em' }}>{d.gate}</div>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+              <div className='grid-2col' style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                 {d.items.map(item => (
                   <div key={item} style={{ background: T.warm, padding: '20px', borderLeft: `3px solid ${d.color}` }}>
                     <div style={{ fontSize: 14, color: T.ink, lineHeight: 1.6 }}>{item}</div>
@@ -58,7 +58,7 @@ export default function ApproachPage() {
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.65)', maxWidth: 560, lineHeight: 1.75, marginBottom: 48 }}>
             Every Summit engagement is governed by four quality gates. No phase begins until the prior gate is signed off — jointly by Summit and the client.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 0 }}>
+          <div className='grid-4col' style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 0 }}>
             {FOUR_D.map((d, i) => (
               <div key={d.gate} style={{ background: 'rgba(255,255,255,0.05)', borderTop: `3px solid ${d.color}`, padding: '28px 24px' }}>
                 <div style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.2em', color: d.color, marginBottom: 8 }}>Gate {i + 1}</div>
@@ -75,7 +75,7 @@ export default function ApproachPage() {
           <SectionLabel>How We Engage</SectionLabel>
           <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, fontSize: 'var(--h2)', color: T.navy, marginBottom: 8 }}>Four Engagement Models</h2>
           <GoldRule />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 2 }}>
+          <div className='grid-2col' style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 2 }}>
             {ENGAGEMENT_MODELS.map((m, i) => {
               const colors = [T.teal, T.navy, T.gold, T.teal]
               return (
